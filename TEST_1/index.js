@@ -12,10 +12,13 @@ function ketQua() {
   var tongDiem = 0;
   tongDiem = diem1 + diem2 + diem3 + khuVuc + doiTuong;
   // hiển thị
+
   if (tongDiem >= diemChuan) {
     document.getElementById(
       "result"
     ).value = ` Bạn Đã Đậu, Tổng Điểm Đạt ${tongDiem}`;
+  } else if (diem1 == 0 || diem2 == 0 || diem3 == 0) {
+    document.getElementById("result").value = ` Bạn Đã Rớt, Vì Có Điểm 0 Hihi`;
   } else {
     document.getElementById(
       "result"
