@@ -1,6 +1,7 @@
 function tinhTien() {
   // INPUT
-  var hoTen = document.getElementById("hoTen").value * 1;
+  var hoTen = document.getElementById("hoTen").value;
+  console.log("🚀 ~ tinhTien ~ hoTen:", hoTen);
   var soDien = document.getElementById("soDien").value * 1;
   // XỮ LÝ
   var kW50Dau = 500;
@@ -12,11 +13,11 @@ function tinhTien() {
 
   if (soDien <= 50) {
     tienTra = kW50Dau * soDien;
-  } else if (soDien <= 100) {
+  } else if (50 < soDien && soDien <= 100) {
     tienTra = kW50Dau * 50 + (soDien - 50) * kW50Ke;
-  } else if (soDien <= 200) {
+  } else if (100 < soDien && soDien <= 200) {
     tienTra = kW50Dau * 50 + kW50Ke * 50 + (soDien - 100) * kW100Ke;
-  } else if (soDien <= 350) {
+  } else if (200 < soDien && soDien <= 350) {
     tienTra =
       kW50Dau * 50 + kW50Ke * 50 + kW100Ke * 100 + (soDien - 200) * kW150Ke;
   } else {
@@ -28,8 +29,10 @@ function tinhTien() {
       (soDien - 350) * conLai;
   }
   //hiển thị kết quả
-  hienThiKetQua(tienTra);
+  hienThiKetQua(hoTen, tienTra);
 }
-function hienThiKetQua(number) {
-  document.getElementById("result").value = number.toLocaleString();
+function hienThiKetQua(name, number) {
+  document.getElementById(
+    "result"
+  ).innerHTML = ` Họ tên:${name}; Tiền điện:${number}`;
 }

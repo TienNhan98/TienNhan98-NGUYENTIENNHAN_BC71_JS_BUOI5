@@ -19,34 +19,35 @@
   </head>
 
   <body>
-    <div class="container w-50">
-      <h1 class="text-center text-uppercase">Tính tiền điện</h1>
-      <div class="d-flex justify-content-between mt-3">
+    <div class="container">
+      <h1>TÍNH THUẾ THU NHẬP CÁ NHÂN</h1>
+      <div class="d-flex">
         <input
           type="text"
           id="hoTen"
-          class="form-control"
-          placeholder="Nhập Họ Và Tên"
+          class="form-control w-25"
+          placeholder="Họ Và Tên"
         />
         <input
           type="text"
-          id="soDien"
-          class="form-control"
-          placeholder="Nhập Số Điện Tiêu Thụ"
+          id="thuNhap"
+          class="form-control w-25"
+          placeholder="Tổng Thu Nhập Năm"
+        />
+        <input
+          type="text"
+          id="phuThuoc"
+          class="form-control w-25"
+          placeholder="Số Người Phụ Thuộc"
         />
       </div>
-      <button
-        onclick="tinhTien()"
-        class="btn btn-primary mt-3"
-        id="tinhTienDien"
-      >
-        Tính Tiền Điện
+      <button onclick="tinhTien()" class="btn btn-primary">
+        Tính Tiền Thuế
       </button>
-      <div class="form-group">
+      <div>
         <p id="result"></p>
       </div>
     </div>
-
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
