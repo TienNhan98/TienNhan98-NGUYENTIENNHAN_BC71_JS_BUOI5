@@ -16,33 +16,49 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
 
   <body>
     <div class="container">
-      <h1 class="text-center">TÍNH THUẾ THU NHẬP CÁ NHÂN</h1>
-      <div class="d-flex justify-content-between mt-3">
+      <h1 class="text-center text-uppercase">Tính tiền cáp</h1>
+      <div class="d-flex">
+        <select
+          class="form-select w-25"
+          aria-label="Default select example"
+          id="khachHang"
+        >
+          <option selected>Chọn Loại Khách Hàng</option>
+          <option value="nhaDan">Nhà Dân</option>
+          <option value="doanhNghiep">Doanh Nghiệp</option>
+        </select>
         <input
           type="text"
-          id="hoTen"
-          class="form-control w-25"
-          placeholder="Họ Và Tên"
+          class="form-control w-25 mx-auto"
+          id="maKhachHang"
+          placeholder="Nhập Mã Khách Hàng"
         />
         <input
           type="text"
-          id="thuNhap"
           class="form-control w-25"
-          placeholder="Tổng Thu Nhập Năm"
+          id="kenhCaoCap"
+          placeholder="Số Kênh Cao Cấp"
         />
+      </div>
+      <div id="input-container" class="hidden">
         <input
           type="text"
-          id="phuThuoc"
-          class="form-control w-25"
-          placeholder="Số Người Phụ Thuộc"
+          class="form-control w-25 mt-3"
+          id="soKetNoi"
+          placeholder="Số Kết Nối"
         />
       </div>
       <button onclick="tinhTien()" class="btn btn-primary mt-3">
-        Tính Tiền Thuế
+        Tính Tiền Cáp
       </button>
       <div class="mt-3">
         <p id="result" class="alert alert-success"></p>
@@ -60,6 +76,19 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document
+        .getElementById("khachHang")
+        .addEventListener("change", function () {
+          var inputContainer = document.getElementById("input-container");
+          if (this.value == "doanhNghiep") {
+            // Giá trị "2" tương ứng với "Doanh Nghiệp"
+            inputContainer.classList.remove("hidden");
+          } else {
+            inputContainer.classList.add("hidden");
+          }
+        });
+    </script>
     <script src="./index.js"></script>
   </body>
 </html>

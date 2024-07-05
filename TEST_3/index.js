@@ -29,5 +29,5 @@ function tinhTien() {
 function hienThiKetQua(name, number) {
   document.getElementById(
     "result"
-  ).innerHTML = `Họ tên:${name} ;Tiền thuế thu nhập cá nhân:${number}`;
+  ).innerHTML = `Họ tên:${name} ;Tiền thuế thu nhập cá nhân:${number.toLocaleString()}VNĐ`;
 }

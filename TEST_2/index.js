@@ -34,5 +34,5 @@ function tinhTien() {
 function hienThiKetQua(name, number) {
   document.getElementById(
     "result"
-  ).innerHTML = ` Họ tên:${name}; Tiền điện:${number}`;
+  ).innerHTML = ` Họ tên:${name}; Tiền điện:${number.toLocaleString()}VNĐ`;
 }
