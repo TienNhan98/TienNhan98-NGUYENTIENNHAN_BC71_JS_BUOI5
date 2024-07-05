@@ -16,12 +16,14 @@ function ketQua() {
   if (tongDiem >= diemChuan) {
     document.getElementById(
       "result"
-    ).value = ` Bạn Đã Đậu, Tổng Điểm Đạt ${tongDiem}`;
+    ).innerHTML = ` Bạn Đã Đậu, Tổng Điểm Đạt ${tongDiem}`;
   } else if (diem1 == 0 || diem2 == 0 || diem3 == 0) {
-    document.getElementById("result").value = ` Bạn Đã Rớt, Vì Có Điểm 0 Hihi`;
+    document.getElementById(
+      "result"
+    ).innerHTML = ` Bạn Đã Rớt, Vì Có Điểm 0 Hihi`;
   } else {
     document.getElementById(
       "result"
-    ).value = ` Bạn Đã Rớt, Tổng Điểm Đạt ${tongDiem}`;
+    ).innerHTML = ` Bạn Đã Rớt, Tổng Điểm Đạt ${tongDiem}`;
   }
 }
